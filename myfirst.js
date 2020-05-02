@@ -1,65 +1,10 @@
+const http = require("http");
 
-var http = require('http');
-var fs = require('fs');
+const requesthandler = require("./channel");
 
-http.createServer(function (req, res) {
-    fs.readFile('nodefirsttask.html', function(err, data) {
-      res.writeHead(200, {'Content-Type': 'text/html'});
-      res.write(data);
-      res.end();
-    });
 
- 
-  }).listen(1000);
+const server = http.createServer(requesthandler);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+server.listen(1000);
